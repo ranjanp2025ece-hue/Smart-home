@@ -1,145 +1,339 @@
-/* -------------------------
-   BASIC SETTINGS
-------------------------- */
+/* ===================================
+   SPIDER SMART HOME
+   MAIN STYLE
+=================================== */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+
+    --red: #e50914;
+    --dark-red: #9b0000;
+    --blue: #0066ff;
+    --dark-blue: #001a4d;
+    --cyan: #00d9ff;
+    --black: #030712;
+    --white: #ffffff;
+    --green: #00ff88;
+    --yellow: #ffd000;
+
 }
 
 body {
 
-    font-family: Arial, sans-serif;
-
-    min-height: 100vh;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
     color: white;
 
     background:
-        radial-gradient(circle at center, #172554 0%, #020617 70%);
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(229, 9, 20, 0.35),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(0, 102, 255, 0.35),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(229, 9, 20, 0.25),
+            transparent 30%
+        ),
+
+        #020617;
+
+    min-height: 100vh;
 
     overflow-x: hidden;
 
 }
 
 
-/* -------------------------
-   SPIDER WEB BACKGROUND
-------------------------- */
+/* ===================================
+   BACKGROUND WEB
+=================================== */
 
-.web {
+.web-background {
 
     position: fixed;
 
-    width: 500px;
-    height: 500px;
+    inset: 0;
 
-    border-radius: 50%;
+    z-index: -5;
 
-    border: 2px solid rgba(255, 0, 0, 0.15);
-
-    pointer-events: none;
+    overflow: hidden;
 
 }
 
-.web::before,
+.web {
+
+    position: absolute;
+
+    width: 600px;
+
+    height: 600px;
+
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(255, 255, 255, 0.12);
+
+}
+
+.web::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(255, 255, 255, 0.10);
+
+    transform: scale(0.75);
+
+}
+
 .web::after {
 
     content: "";
 
     position: absolute;
 
-    inset: 50px;
+    width: 100%;
+
+    height: 100%;
 
     border-radius: 50%;
 
-    border: 2px solid rgba(255, 0, 0, 0.12);
+    border: 1px solid
+        rgba(255, 255, 255, 0.08);
+
+    transform: scale(0.5);
 
 }
 
-.web::after {
+.web-one {
 
-    inset: 120px;
+    left: -300px;
 
-}
-
-.web1 {
-
-    top: -250px;
-    left: -250px;
+    top: -300px;
 
 }
 
-.web2 {
+.web-two {
 
-    bottom: -250px;
-    right: -250px;
+    right: -300px;
+
+    bottom: -300px;
+
+}
+
+.web-three {
+
+    right: -400px;
+
+    top: 20%;
+
+    opacity: 0.5;
 
 }
 
 
-/* -------------------------
-   HEADER
-------------------------- */
+/* ===================================
+   PARTICLES
+=================================== */
 
-header {
+.particles span {
+
+    position: fixed;
+
+    z-index: -1;
+
+    color: #ff1e2d;
+
+    font-size: 20px;
+
+    animation:
+        floatParticle 8s infinite;
+
+}
+
+.particles span:nth-child(1) {
+    left: 10%;
+    top: 20%;
+}
+
+.particles span:nth-child(2) {
+    left: 25%;
+    top: 70%;
+}
+
+.particles span:nth-child(3) {
+    left: 40%;
+    top: 30%;
+}
+
+.particles span:nth-child(4) {
+    left: 60%;
+    top: 80%;
+}
+
+.particles span:nth-child(5) {
+    left: 75%;
+    top: 20%;
+}
+
+.particles span:nth-child(6) {
+    left: 90%;
+    top: 60%;
+}
+
+.particles span:nth-child(7) {
+    left: 50%;
+    top: 50%;
+}
+
+@keyframes floatParticle {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translateY(-40px) rotate(180deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0) rotate(360deg);
+        opacity: 0.3;
+    }
+
+}
+
+
+/* ===================================
+   HERO
+=================================== */
+
+.hero {
+
+    position: relative;
+
+    padding: 45px 20px;
 
     text-align: center;
 
-    padding: 35px 20px;
-
     background:
+
         linear-gradient(
             135deg,
-            #b91c1c,
-            #dc2626,
-            #991b1b
+            #a00000,
+            #ed1c24 45%,
+            #001f70
         );
 
-    border-bottom: 5px solid #0f172a;
+    border-bottom:
+        4px solid #ffffff;
 
     box-shadow:
-        0 5px 25px rgba(220, 38, 38, 0.5);
+        0 0 40px
+        rgba(229, 9, 20, 0.7);
 
 }
 
-.spider {
+.spider-symbol {
 
-    font-size: 65px;
+    font-size: 75px;
 
-    animation: spiderMove 2s infinite alternate;
+    animation:
+        spiderBounce 2s infinite;
+
+    filter:
+        drop-shadow(
+            0 0 15px
+            rgba(0,0,0,0.7)
+        );
 
 }
 
-@keyframes spiderMove {
+@keyframes spiderBounce {
 
-    from {
+    0%, 100% {
         transform: translateY(0);
     }
 
-    to {
-        transform: translateY(-10px);
+    50% {
+        transform: translateY(-12px);
     }
 
 }
 
-header h1 {
+.small-title {
 
-    font-size: 40px;
+    font-size: 14px;
 
-    font-weight: 900;
+    letter-spacing: 4px;
 
-    letter-spacing: 3px;
-
-    text-shadow:
-        3px 3px 0 #020617;
+    margin-bottom: 8px;
 
 }
 
-header p {
+.hero h1 {
 
-    margin-top: 10px;
+    font-size:
+        clamp(38px, 7vw, 80px);
+
+    font-weight: 1000;
+
+    letter-spacing: 4px;
+
+    text-shadow:
+
+        4px 4px 0 #001a4d,
+
+        0 0 20px
+        rgba(255,255,255,0.5);
+
+}
+
+.hero h1 span {
+
+    display: block;
+
+    color: #00c8ff;
+
+    text-shadow:
+
+        3px 3px 0 #001a4d,
+
+        0 0 25px #00aaff;
+
+}
+
+.tagline {
+
+    margin-top: 15px;
 
     font-size: 18px;
 
@@ -147,264 +341,827 @@ header p {
 
 }
 
+.clock {
 
-/* -------------------------
-   DASHBOARD
-------------------------- */
+    margin-top: 20px;
 
-main {
-
-    width: 90%;
-
-    max-width: 1100px;
-
-    margin: 40px auto;
-
-}
-
-.dashboard-title {
-
-    text-align: center;
-
-    margin-bottom: 30px;
-
-    font-size: 25px;
-
-    color: #ef4444;
-
-    letter-spacing: 2px;
-
-}
-
-
-/* -------------------------
-   DEVICE GRID
-------------------------- */
-
-.dashboard {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 30px;
-
-}
-
-
-/* -------------------------
-   DEVICE CARD
-------------------------- */
-
-.device-card {
-
-    position: relative;
-
-    background:
-        linear-gradient(
-            145deg,
-            #111827,
-            #020617
-        );
-
-    border: 2px solid #dc2626;
-
-    border-radius: 20px;
-
-    padding: 35px;
-
-    text-align: center;
-
-    box-shadow:
-        0 0 20px rgba(220, 38, 38, 0.25);
-
-    transition: 0.3s;
-
-}
-
-.device-card:hover {
-
-    transform: translateY(-8px);
-
-    border-color: #3b82f6;
-
-    box-shadow:
-        0 0 30px rgba(59, 130, 246, 0.5);
-
-}
-
-
-/* -------------------------
-   DEVICE ICON
-------------------------- */
-
-.device-icon {
-
-    font-size: 60px;
-
-    margin-bottom: 15px;
-
-}
-
-.device-card h2 {
-
-    color: #ef4444;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 15px;
-
-}
-
-
-/* -------------------------
-   STATUS
-------------------------- */
-
-.device-card p {
-
-    font-size: 18px;
-
-    margin-bottom: 20px;
-
-}
-
-.on {
-
-    color: #22c55e;
+    font-size: 20px;
 
     font-weight: bold;
 
-    text-shadow:
-        0 0 10px #22c55e;
-
-}
-
-.off {
-
-    color: #ef4444;
-
-    font-weight: bold;
+    color: #fff;
 
 }
 
 
-/* -------------------------
-   BUTTON
-------------------------- */
+/* ===================================
+   NAVIGATION
+=================================== */
 
-button {
+nav {
 
-    padding: 13px 30px;
+    position: sticky;
 
-    border: none;
+    top: 0;
 
-    border-radius: 30px;
+    z-index: 100;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    padding: 15px;
 
     background:
-        linear-gradient(
-            90deg,
-            #dc2626,
-            #991b1b
-        );
+        rgba(2, 6, 23, 0.95);
+
+    border-bottom:
+        1px solid #e50914;
+
+    backdrop-filter:
+        blur(10px);
+
+}
+
+nav a {
 
     color: white;
 
-    font-size: 16px;
+    text-decoration: none;
+
+    padding: 9px 18px;
+
+    border-radius: 20px;
 
     font-weight: bold;
 
-    letter-spacing: 1px;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 0 15px rgba(220, 38, 38, 0.4);
+    font-size: 13px;
 
     transition: 0.3s;
 
 }
 
-button:hover {
+nav a:hover {
 
-    transform: scale(1.08);
-
-    background:
-        linear-gradient(
-            90deg,
-            #2563eb,
-            #1d4ed8
-        );
+    background: #e50914;
 
     box-shadow:
-        0 0 20px rgba(37, 99, 235, 0.7);
+        0 0 15px #e50914;
 
 }
 
 
-/* -------------------------
-   FOOTER
-------------------------- */
+/* ===================================
+   MAIN
+=================================== */
 
-footer {
+main {
 
-    text-align: center;
+    width: 92%;
 
-    padding: 30px;
+    max-width: 1200px;
 
-    margin-top: 30px;
-
-    background: #020617;
-
-    border-top: 2px solid #dc2626;
+    margin: auto;
 
 }
 
-.footer-spider {
 
-    font-size: 35px;
+/* ===================================
+   WELCOME
+=================================== */
+
+.welcome {
+
+    margin: 45px 0;
+
+    padding: 35px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(229,9,20,0.25),
+            rgba(0,102,255,0.25)
+        );
+
+    border:
+
+        1px solid
+        rgba(255,255,255,0.25);
+
+    border-radius: 25px;
+
+    backdrop-filter:
+        blur(10px);
+
+}
+
+.section-label {
+
+    color: #00d9ff;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
 
     margin-bottom: 10px;
 
 }
 
-footer p {
+.welcome h2 {
 
-    margin: 5px;
+    font-size:
+        clamp(28px, 5vw, 50px);
 
-    color: #94a3b8;
+}
+
+.welcome h2 span {
+
+    color: #e50914;
+
+    text-shadow:
+        0 0 15px #e50914;
+
+}
+
+.welcome p {
+
+    margin-top: 10px;
+
+    color: #dbeafe;
 
 }
 
 
-/* -------------------------
-   MOBILE RESPONSIVE
-------------------------- */
+/* ===================================
+   POWER CIRCLE
+=================================== */
+
+.power-circle {
+
+    width: 160px;
+
+    height: 160px;
+
+    min-width: 160px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #0066ff,
+            #001a4d
+        );
+
+    border:
+        4px solid #00d9ff;
+
+    box-shadow:
+
+        0 0 25px #0066ff,
+
+        inset 0 0 25px
+        rgba(0,217,255,0.5);
+
+}
+
+.power-icon {
+
+    font-size: 35px;
+
+}
+
+.power-circle strong {
+
+    color: #00ff88;
+
+}
+
+
+/* ===================================
+   SECTION HEADING
+=================================== */
+
+.section-heading {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 50px 0 30px;
+
+}
+
+.section-heading h2 {
+
+    font-size: 32px;
+
+    text-align: center;
+
+}
+
+.section-heading span {
+
+    color: #e50914;
+
+    font-size: 25px;
+
+}
+
+
+/* ===================================
+   DEVICE GRID
+=================================== */
+
+.device-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+/* ===================================
+   DEVICE CARD
+=================================== */
+
+.device-card {
+
+    position: relative;
+
+    padding: 25px;
+
+    text-align: center;
+
+    border-radius: 22px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(30,41,59,0.95),
+            rgba(2,6,23,0.95)
+        );
+
+    border:
+        2px solid
+        rgba(229,9,20,0.65);
+
+    box-shadow:
+
+        0 10px 30px
+        rgba(0,0,0,0.4),
+
+        0 0 15px
+        rgba(229,9,20,0.15);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s,
+        border 0.3s,
+        box-shadow 0.3s;
+
+}
+
+.device-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 5px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #e50914,
+            #00d9ff,
+            #e50914
+        );
+
+}
+
+.device-card:hover {
+
+    transform:
+        translateY(-10px)
+        scale(1.02);
+
+    border-color: #00d9ff;
+
+    box-shadow:
+
+        0 15px 40px
+        rgba(0,0,0,0.5),
+
+        0 0 30px
+        rgba(0,217,255,0.3);
+
+}
+
+
+/* ===================================
+   CARD TOP
+=================================== */
+
+.card-top {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+}
+
+.device-number {
+
+    font-size: 12px;
+
+    color: #64748b;
+
+    font-weight: bold;
+
+}
+
+.web-icon {
+
+    font-size: 20px;
+
+}
+
+
+/* ===================================
+   DEVICE ICON
+=================================== */
+
+.device-icon {
+
+    width: 100px;
+
+    height: 100px;
+
+    margin: 20px auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 50%;
+
+    font-size: 50px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(229,9,20,0.5),
+            rgba(0,26,77,0.8)
+        );
+
+    border:
+        2px solid #e50914;
+
+    box-shadow:
+
+        0 0 20px
+        rgba(229,9,20,0.4);
+
+    transition: 0.3s;
+
+}
+
+.device-card:hover .device-icon {
+
+    transform:
+        rotate(5deg)
+        scale(1.1);
+
+}
+
+.device-card h3 {
+
+    font-size: 20px;
+
+    color: #ffffff;
+
+    letter-spacing: 1px;
+
+}
+
+.device-description {
+
+    color: #94a3b8;
+
+    font-size: 13px;
+
+    margin-top: 5px;
+
+}
+
+
+/* ===================================
+   STATUS
+=================================== */
+
+.status {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin: 20px 0;
+
+    padding: 10px 15px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,0.05);
+
+}
+
+.status span {
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+}
+
+.on {
+
+    color: #00ff88;
+
+    text-shadow:
+        0 0 10px #00ff88;
+
+}
+
+.off {
+
+    color: #ff3344;
+
+}
+
+
+/* ===================================
+   BUTTON
+=================================== */
+
+.device-card button {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #d00000,
+            #ff1e2d
+        );
+
+    box-shadow:
+        0 5px 15px
+        rgba(229,9,20,0.3);
+
+    transition: 0.3s;
+
+}
+
+.device-card button:hover {
+
+    transform: scale(1.03);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #0066ff,
+            #00aaff
+        );
+
+    box-shadow:
+        0 0 20px
+        rgba(0,170,255,0.5);
+
+}
+
+.device-card button.active {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #0066ff,
+            #00aaff
+        );
+
+}
+
+
+/* ===================================
+   ACTIVE CARD
+=================================== */
+
+.device-card.active {
+
+    border-color: #00d9ff;
+
+    box-shadow:
+
+        0 0 30px
+        rgba(0,217,255,0.35);
+
+}
+
+.device-card.active .device-icon {
+
+    border-color: #00d9ff;
+
+    box-shadow:
+        0 0 30px
+        rgba(0,217,255,0.5);
+
+}
+
+
+/* ===================================
+   SECURITY
+=================================== */
+
+.security-section {
+
+    margin: 60px 0;
+
+    padding: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    border-radius: 20px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(0,102,255,0.25),
+            rgba(0,255,136,0.1)
+        );
+
+    border:
+        2px solid
+        rgba(0,217,255,0.5);
+
+}
+
+.security-icon {
+
+    font-size: 55px;
+
+}
+
+.security-section h2 {
+
+    font-size: 28px;
+
+}
+
+.security-section h2 span {
+
+    color: #00ff88;
+
+}
+
+.security-status {
+
+    margin-left: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #00ff88;
+
+}
+
+.green-dot {
+
+    width: 12px;
+
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: #00ff88;
+
+    box-shadow:
+        0 0 15px #00ff88;
+
+}
+
+
+/* ===================================
+   ABOUT
+=================================== */
+
+.about-section {
+
+    text-align: center;
+
+    margin: 60px 0;
+
+    padding: 40px;
+
+}
+
+.about-section h2 {
+
+    font-size: 30px;
+
+    color: #e50914;
+
+}
+
+.about-section p {
+
+    max-width: 650px;
+
+    margin: 15px auto;
+
+    color: #94a3b8;
+
+    line-height: 1.7;
+
+}
+
+
+/* ===================================
+   FOOTER
+=================================== */
+
+footer {
+
+    text-align: center;
+
+    padding: 45px 20px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #050505,
+            #001a4d
+        );
+
+    border-top:
+        3px solid #e50914;
+
+}
+
+.footer-spider {
+
+    font-size: 50px;
+
+    margin-bottom: 10px;
+
+}
+
+footer h2 {
+
+    color: #e50914;
+
+}
+
+footer p {
+
+    color: #94a3b8;
+
+    margin-top: 8px;
+
+}
+
+.copyright {
+
+    font-size: 12px;
+
+}
+
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+
+@media (max-width: 900px) {
+
+    .device-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
 
 @media (max-width: 650px) {
 
-    .dashboard {
+    .device-grid {
 
         grid-template-columns: 1fr;
 
     }
 
-    header h1 {
+    .welcome {
 
-        font-size: 28px;
+        flex-direction: column;
 
-    }
-
-    header p {
-
-        font-size: 15px;
+        text-align: center;
 
     }
 
-    .device-card {
+    .security-section {
 
-        padding: 25px;
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+    .security-status {
+
+        margin-left: 0;
+
+    }
+
+    nav a {
+
+        font-size: 11px;
+
+        padding: 8px 10px;
 
     }
 
