@@ -1,4 +1,12 @@
-// Appliance status
+/* ===================================
+   SPIDER SMART HOME
+   JAVASCRIPT
+=================================== */
+
+
+/* ===================================
+   DEVICE STATUS
+=================================== */
 
 let devices = {
 
@@ -8,72 +16,207 @@ let devices = {
 
     tv: false,
 
-    ac: false
+    ac: false,
+
+    camera: false
 
 };
 
 
-// Toggle appliance
+/* ===================================
+   TOGGLE DEVICE
+=================================== */
 
 function toggleDevice(device) {
 
-    // Change ON/OFF state
+    // Change status
 
-    devices[device] = !devices[device];
+    devices[device] =
+        !devices[device];
 
 
-    // Find status element
+    // Get elements
 
-    let status =
+    const status =
         document.getElementById(
             device + "Status"
         );
 
-
-    // Find button
-
-    let button =
+    const button =
         document.getElementById(
             device + "Button"
         );
 
+    const card =
+        document.getElementById(
+            device + "Card"
+        );
 
-    // Check status
 
-    if (devices[device] === true) {
+    /* ================================
+       DEVICE ON
+    ================================= */
 
-        // ON
+    if (devices[device]) {
 
         status.textContent = "ON";
 
         status.className = "on";
 
-        button.textContent = "TURN OFF";
+        button.innerHTML =
+            "<span>⚡</span> TURN OFF";
+
+        button.classList.add("active");
+
+        card.classList.add("active");
 
 
         console.log(
             device.toUpperCase() +
-            " is ON"
+            " turned ON"
         );
 
     }
 
-    else {
 
-        // OFF
+    /* ================================
+       DEVICE OFF
+    ================================= */
+
+    else {
 
         status.textContent = "OFF";
 
         status.className = "off";
 
-        button.textContent = "TURN ON";
+        button.innerHTML =
+            "<span>⚡</span> TURN ON";
+
+        button.classList.remove("active");
+
+        card.classList.remove("active");
 
 
         console.log(
             device.toUpperCase() +
-            " is OFF"
+            " turned OFF"
         );
 
     }
 
 }
+
+
+/* ===================================
+   SMART DOOR LOCK
+=================================== */
+
+let doorLocked = true;
+
+
+function toggleDoor() {
+
+    const status =
+        document.getElementById(
+            "doorStatus"
+        );
+
+    const button =
+        document.getElementById(
+            "doorButton"
+        );
+
+    const card =
+        document.getElementById(
+            "doorCard"
+        );
+
+
+    doorLocked = !doorLocked;
+
+
+    if (!doorLocked) {
+
+        status.textContent = "UNLOCKED";
+
+        status.className = "on";
+
+        button.innerHTML =
+            "<span>🔒</span> LOCK";
+
+        button.classList.add("active");
+
+        card.classList.add("active");
+
+    }
+
+    else {
+
+        status.textContent = "LOCKED";
+
+        status.className = "off";
+
+        button.innerHTML =
+            "<span>🔓</span> UNLOCK";
+
+        button.classList.remove("active");
+
+        card.classList.remove("active");
+
+    }
+
+}
+
+
+/* ===================================
+   DIGITAL CLOCK
+=================================== */
+
+function updateClock() {
+
+    const now =
+        new Date();
+
+
+    let hours =
+        String(now.getHours())
+        .padStart(2, "0");
+
+    let minutes =
+        String(now.getMinutes())
+        .padStart(2, "0");
+
+    let seconds =
+        String(now.getSeconds())
+        .padStart(2, "0");
+
+
+    document.getElementById(
+        "clock"
+    ).textContent =
+
+        hours +
+        ":" +
+        minutes +
+        ":" +
+        seconds;
+
+}
+
+
+setInterval(
+    updateClock,
+    1000
+);
+
+
+updateClock();
+
+
+/* ===================================
+   PAGE LOAD MESSAGE
+=================================== */
+
+console.log(
+    "🕷️ Spider Smart Home System Online"
+);
