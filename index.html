@@ -1,568 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Spider Smart Home</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spider-Man: Web Network</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-    <!-- Animated Web Background -->
+  <!-- Web Canvas for Interactive Web Shooting -->
+  <canvas id="webCanvas"></canvas>
 
-    <div class="web-background">
-        <div class="web web-one"></div>
-        <div class="web web-two"></div>
-        <div class="web web-three"></div>
+  <!-- Navbar -->
+  <nav class="spidey-nav">
+    <div class="logo">
+      <svg class="icon-spider-logo" viewBox="0 0 100 100">
+        <path d="M50 15 L35 35 L15 30 L30 50 L10 70 L35 65 L20 90 L45 75 L50 95 L55 75 L80 90 L65 65 L90 70 L70 50 L85 30 L65 35 Z" fill="#E62429" stroke="#FFF" stroke-width="2"/>
+        <circle cx="50" cy="45" r="8" fill="#FFF"/>
+      </svg>
+      <span>SPIDEY-NET</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero" class="active">Suit Hub</a></li>
+      <li><a href="#gadgets">Gadgets</a></li>
+      <li><a href="#stats">Spider-Sense</a></li>
+    </ul>
+    <button class="cta-web-btn" id="shootWebBtn">
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2L15 8L21 9L17 14 L18 20L12 17L6 20L7 14L3 9L9 8Z"/>
+      </svg>
+      SHOOT WEB
+    </button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="hero-content">
+      <div class="badge">FRIENDLY NEIGHBORHOOD PROTOCOL</div>
+      <h1>YOUR NETWORK, <br><span class="highlight-blue">SUPERCHARGED.</span></h1>
+      <p>Navigate the city with high-tech suit diagnostics, real-time web-shooter telemetry, and instant Spider-Sense alert feeds.</p>
+      
+      <div class="hero-buttons">
+        <a href="#gadgets" class="btn-primary">EXPLORE TECH</a>
+        <button class="btn-secondary" id="activateSenseBtn">ACTIVATE SPIDER-SENSE</button>
+      </div>
     </div>
 
-
-    <!-- Floating Particles -->
-
-    <div class="particles">
-        <span>✦</span>
-        <span>✧</span>
-        <span>✦</span>
-        <span>✧</span>
-        <span>✦</span>
-        <span>✧</span>
-        <span>✦</span>
+    <!-- Interactive Hero Card -->
+    <div class="hero-card-container">
+      <div class="hero-card">
+        <div class="card-badge">MARK IV SUIT</div>
+        <div class="spider-mask-art">
+          <svg viewBox="0 0 100 120" class="mask-svg">
+            <path d="M50 5 C20 5 5 35 5 70 C5 95 30 115 50 115 C70 115 95 95 95 70 C95 35 80 5 50 5 Z" fill="#E62429" stroke="#111" stroke-width="4"/>
+            <!-- Web Lines on Mask -->
+            <path d="M50 5 L50 115 M5 70 L95 70 M15 35 L85 95 M15 95 L85 35" stroke="rgba(0,0,0,0.4)" stroke-width="2"/>
+            <!-- Eyes -->
+            <path d="M20 45 Q 40 40 45 60 Q 30 75 15 60 Z" fill="#FFF" stroke="#111" stroke-width="4"/>
+            <path d="M80 45 Q 60 40 55 60 Q 70 75 85 60 Z" fill="#FFF" stroke="#111" stroke-width="4"/>
+          </svg>
+        </div>
+        <h3>STEALTH & ARMOR</h3>
+        <p>Liquid metal nano-technology with web-fluid overdrive.</p>
+      </div>
     </div>
+  </section>
 
-
-    <!-- HEADER -->
-
-    <header class="hero">
-
-        <div class="spider-symbol">
-            🕷️
+  <!-- Spidey Gadgets Section -->
+  <section id="gadgets" class="gadgets-section">
+    <h2 class="section-title">SPIDEY <span>EQUIPMENT</span></h2>
+    
+    <div class="grid-container">
+      
+      <!-- Card 1 -->
+      <div class="gadget-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="9" stroke="#E62429"/>
+            <path d="M12 3v18M3 12h18M6 6l12 12M6 18L18 6" stroke="#00D2FF"/>
+          </svg>
         </div>
+        <h3>Web-Shooter 3.0</h3>
+        <p>Micro-fluid compression tanks with up to 20 custom web-combination matrices.</p>
+      </div>
 
-        <div class="hero-content">
-
-            <p class="small-title">
-                🕸️ WELCOME TO YOUR
-            </p>
-
-            <h1>
-                SPIDER
-                <span>SMART HOME</span>
-            </h1>
-
-            <p class="tagline">
-                With great power comes great control.
-            </p>
-
+      <!-- Card 2 -->
+      <div class="gadget-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#FFD700" fill="#FFD700"/>
+          </svg>
         </div>
+        <h3>Spider-Sense HUD</h3>
+        <p>Omnidirectional early warning alert system integrated into lens display optics.</p>
+      </div>
 
-        <div class="clock" id="clock">
-            00:00:00
+      <!-- Card 3 -->
+      <div class="gadget-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 2 7 12 12 22 7 12 2" stroke="#E62429"/>
+            <polyline points="2 17 12 22 22 17" stroke="#00D2FF"/>
+            <polyline points="2 12 12 17 22 12" stroke="#E62429"/>
+          </svg>
         </div>
+        <h3>Recon Drones</h3>
+        <p>Autonomous spider-drones capable of stealth mapping and acoustic tracking.</p>
+      </div>
 
-    </header>
+    </div>
+  </section>
 
-
-    <!-- NAVIGATION -->
-
-    <nav>
-
-        <a href="#home">HOME</a>
-
-        <a href="#devices">DEVICES</a>
-
-        <a href="#security">SECURITY</a>
-
-        <a href="#about">ABOUT</a>
-
-    </nav>
-
-
-    <!-- MAIN -->
-
-    <main id="home">
-
-
-        <!-- Welcome Section -->
-
-        <section class="welcome">
-
-            <div>
-
-                <p class="section-label">
-                    🕷️ SPIDER COMMAND CENTER
-                </p>
-
-                <h2>
-                    CONTROL YOUR
-                    <span>HOME</span>
-                </h2>
-
-                <p>
-                    Manage your smart appliances from
-                    one powerful dashboard.
-                </p>
-
-            </div>
-
-            <div class="power-circle">
-
-                <div class="power-icon">
-                    ⚡
-                </div>
-
-                <p>
-                    SYSTEM
-                </p>
-
-                <strong>
-                    ONLINE
-                </strong>
-
-            </div>
-
-        </section>
-
-
-        <!-- DEVICES -->
-
-        <section id="devices">
-
-            <div class="section-heading">
-
-                <span>🕸️</span>
-
-                <h2>
-                    SMART DEVICES
-                </h2>
-
-                <span>🕸️</span>
-
-            </div>
-
-
-            <div class="device-grid">
-
-
-                <!-- LIGHT -->
-
-                <div class="device-card"
-                     id="lightCard">
-
-                    <div class="card-top">
-
-                        <span class="device-number">
-                            01
-                        </span>
-
-                        <span class="web-icon">
-                            🕸️
-                        </span>
-
-                    </div>
-
-                    <div class="device-icon light-icon">
-                        💡
-                    </div>
-
-                    <h3>
-                        SMART LIGHT
-                    </h3>
-
-                    <p class="device-description">
-                        Living Room
-                    </p>
-
-                    <div class="status">
-
-                        <span>
-                            STATUS
-                        </span>
-
-                        <strong id="lightStatus"
-                                class="off">
-                            OFF
-                        </strong>
-
-                    </div>
-
-                    <button
-                        id="lightButton"
-                        onclick="toggleDevice('light')">
-
-                        <span>⚡</span>
-                        TURN ON
-
-                    </button>
-
-                </div>
-
-
-                <!-- FAN -->
-
-                <div class="device-card"
-                     id="fanCard">
-
-                    <div class="card-top">
-
-                        <span class="device-number">
-                            02
-                        </span>
-
-                        <span class="web-icon">
-                            🕸️
-                        </span>
-
-                    </div>
-
-                    <div class="device-icon fan-icon">
-                        🌀
-                    </div>
-
-                    <h3>
-                        SMART FAN
-                    </h3>
-
-                    <p class="device-description">
-                        Bedroom
-                    </p>
-
-                    <div class="status">
-
-                        <span>
-                            STATUS
-                        </span>
-
-                        <strong id="fanStatus"
-                                class="off">
-                            OFF
-                        </strong>
-
-                    </div>
-
-                    <button
-                        id="fanButton"
-                        onclick="toggleDevice('fan')">
-
-                        <span>⚡</span>
-                        TURN ON
-
-                    </button>
-
-                </div>
-
-
-                <!-- TV -->
-
-                <div class="device-card"
-                     id="tvCard">
-
-                    <div class="card-top">
-
-                        <span class="device-number">
-                            03
-                        </span>
-
-                        <span class="web-icon">
-                            🕸️
-                        </span>
-
-                    </div>
-
-                    <div class="device-icon tv-icon">
-                        📺
-                    </div>
-
-                    <h3>
-                        SMART TV
-                    </h3>
-
-                    <p class="device-description">
-                        Entertainment Room
-                    </p>
-
-                    <div class="status">
-
-                        <span>
-                            STATUS
-                        </span>
-
-                        <strong id="tvStatus"
-                                class="off">
-                            OFF
-                        </strong>
-
-                    </div>
-
-                    <button
-                        id="tvButton"
-                        onclick="toggleDevice('tv')">
-
-                        <span>⚡</span>
-                        TURN ON
-
-                    </button>
-
-                </div>
-
-
-                <!-- AC -->
-
-                <div class="device-card"
-                     id="acCard">
-
-                    <div class="card-top">
-
-                        <span class="device-number">
-                            04
-                        </span>
-
-                        <span class="web-icon">
-                            🕸️
-                        </span>
-
-                    </div>
-
-                    <div class="device-icon ac-icon">
-                        ❄️
-                    </div>
-
-                    <h3>
-                        SMART AC
-                    </h3>
-
-                    <p class="device-description">
-                        Master Bedroom
-                    </p>
-
-                    <div class="status">
-
-                        <span>
-                            STATUS
-                        </span>
-
-                        <strong id="acStatus"
-                                class="off">
-                            OFF
-                        </strong>
-
-                    </div>
-
-                    <button
-                        id="acButton"
-                        onclick="toggleDevice('ac')">
-
-                        <span>⚡</span>
-                        TURN ON
-
-                    </button>
-
-                </div>
-
-
-                <!-- DOOR -->
-
-                <div class="device-card"
-                     id="doorCard">
-
-                    <div class="card-top">
-
-                        <span class="device-number">
-                            05
-                        </span>
-
-                        <span class="web-icon">
-                            🕸️
-                        </span>
-
-                    </div>
-
-                    <div class="device-icon door-icon">
-                        🔐
-                    </div>
-
-                    <h3>
-                        SMART LOCK
-                    </h3>
-
-                    <p class="device-description">
-                        Main Entrance
-                    </p>
-
-                    <div class="status">
-
-                        <span>
-                            STATUS
-                        </span>
-
-                        <strong id="doorStatus"
-                                class="off">
-                            LOCKED
-                        </strong>
-
-                    </div>
-
-                    <button
-                        id="doorButton"
-                        onclick="toggleDoor()">
-
-                        <span>🔓</span>
-                        UNLOCK
-
-                    </button>
-
-                </div>
-
-
-                <!-- CAMERA -->
-
-                <div class="device-card"
-                     id="cameraCard">
-
-                    <div class="card-top">
-
-                        <span class="device-number">
-                            06
-                        </span>
-
-                        <span class="web-icon">
-                            🕸️
-                        </span>
-
-                    </div>
-
-                    <div class="device-icon camera-icon">
-                        📹
-                    </div>
-
-                    <h3>
-                        SECURITY CAM
-                    </h3>
-
-                    <p class="device-description">
-                        Main Entrance
-                    </p>
-
-                    <div class="status">
-
-                        <span>
-                            STATUS
-                        </span>
-
-                        <strong id="cameraStatus"
-                                class="off">
-                            OFF
-                        </strong>
-
-                    </div>
-
-                    <button
-                        id="cameraButton"
-                        onclick="toggleDevice('camera')">
-
-                        <span>📹</span>
-                        START
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- SECURITY -->
-
-        <section id="security"
-                 class="security-section">
-
-            <div class="security-icon">
-                🛡️
-            </div>
-
-            <div>
-
-                <p class="section-label">
-                    SPIDER SECURITY SYSTEM
-                </p>
-
-                <h2>
-                    YOUR HOME IS
-                    <span>PROTECTED</span>
-                </h2>
-
-                <p>
-                    Smart monitoring and device control
-                    from one place.
-                </p>
-
-            </div>
-
-            <div class="security-status">
-
-                <div class="green-dot"></div>
-
-                <strong>
-                    SECURE
-                </strong>
-
-            </div>
-
-        </section>
-
-
-        <!-- ABOUT -->
-
-        <section id="about"
-                 class="about-section">
-
-            <h2>
-                🕷️ SPIDER SMART HOME
-            </h2>
-
-            <p>
-                A colorful smart home control dashboard
-                designed to manage your appliances
-                quickly and easily.
-            </p>
-
-        </section>
-
-
-    </main>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <div class="footer-spider">
-            🕷️
-        </div>
-
-        <h2>
-            SPIDER SMART HOME
-        </h2>
-
-        <p>
-            Your Home • Your Power • Your Control
-        </p>
-
-        <p class="copyright">
-            © 2026 Spider Smart Home
-        </p>
-
-    </footer>
-
-
-    <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
-
 </html>
