@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home Control</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🏠 Smart Home</h1>
+        <p>Home Appliance Control System</p>
+    </header>
+
+    <main>
+
+        <div class="dashboard">
+
+            <!-- Light -->
+            <div class="device-card">
+                <div class="icon">💡</div>
+                <h2>Light</h2>
+
+                <p>Status:
+                    <span id="lightStatus" class="off">OFF</span>
+                </p>
+
+                <button onclick="toggleDevice('light')">
+                    Turn ON
+                </button>
+            </div>
+
+
+            <!-- Fan -->
+            <div class="device-card">
+                <div class="icon">🌀</div>
+                <h2>Fan</h2>
+
+                <p>Status:
+                    <span id="fanStatus" class="off">OFF</span>
+                </p>
+
+                <button onclick="toggleDevice('fan')">
+                    Turn ON
+                </button>
+            </div>
+
+
+            <!-- TV -->
+            <div class="device-card">
+                <div class="icon">📺</div>
+                <h2>TV</h2>
+
+                <p>Status:
+                    <span id="tvStatus" class="off">OFF</span>
+                </p>
+
+                <button onclick="toggleDevice('tv')">
+                    Turn ON
+                </button>
+            </div>
+
+
+            <!-- AC -->
+            <div class="device-card">
+                <div class="icon">❄️</div>
+                <h2>AC</h2>
+
+                <p>Status:
+                    <span id="acStatus" class="off">OFF</span>
+                </p>
+
+                <button onclick="toggleDevice('ac')">
+                    Turn ON
+                </button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Smart Home Control</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
