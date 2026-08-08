@@ -1,112 +1,79 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+// Appliance status
 
-body {
-    font-family: Arial, sans-serif;
-    background: #f2f5f9;
-    color: #222;
-}
+let devices = {
 
-header {
-    background: #1e293b;
-    color: white;
-    text-align: center;
-    padding: 30px;
-}
+    light: false,
 
-header h1 {
-    font-size: 36px;
-    margin-bottom: 8px;
-}
+    fan: false,
 
-header p {
-    font-size: 18px;
-}
+    tv: false,
 
-.dashboard {
-    width: 90%;
-    max-width: 1000px;
-    margin: 40px auto;
+    ac: false
 
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.device-card {
-    background: white;
-    padding: 30px;
-    text-align: center;
-    border-radius: 15px;
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-
-    transition: 0.3s;
-}
-
-.device-card:hover {
-    transform: translateY(-5px);
-}
-
-.icon {
-    font-size: 55px;
-    margin-bottom: 15px;
-}
-
-.device-card h2 {
-    margin-bottom: 15px;
-}
-
-.device-card p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.on {
-    color: green;
-    font-weight: bold;
-}
-
-.off {
-    color: red;
-    font-weight: bold;
-}
-
-button {
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-
-    background: #2563eb;
-    color: white;
-
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #1d4ed8;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    color: #666;
-}
+};
 
 
-/* Mobile screen */
+// Toggle appliance
 
-@media (max-width: 600px) {
+function toggleDevice(device) {
 
-    .dashboard {
-        grid-template-columns: 1fr;
+    // Change ON/OFF state
+
+    devices[device] = !devices[device];
+
+
+    // Find status element
+
+    let status =
+        document.getElementById(
+            device + "Status"
+        );
+
+
+    // Find button
+
+    let button =
+        document.getElementById(
+            device + "Button"
+        );
+
+
+    // Check status
+
+    if (devices[device] === true) {
+
+        // ON
+
+        status.textContent = "ON";
+
+        status.className = "on";
+
+        button.textContent = "TURN OFF";
+
+
+        console.log(
+            device.toUpperCase() +
+            " is ON"
+        );
+
     }
 
-    header h1 {
-        font-size: 28px;
+    else {
+
+        // OFF
+
+        status.textContent = "OFF";
+
+        status.className = "off";
+
+        button.textContent = "TURN ON";
+
+
+        console.log(
+            device.toUpperCase() +
+            " is OFF"
+        );
+
     }
+
 }
