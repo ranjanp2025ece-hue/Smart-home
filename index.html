@@ -3,88 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Home Control</title>
+
+    <title>Spider Smart Home</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- Background Web -->
+    <div class="web web1"></div>
+    <div class="web web2"></div>
+
+    <!-- Header -->
     <header>
-        <h1>🏠 Smart Home</h1>
-        <p>Home Appliance Control System</p>
+
+        <div class="spider">🕷️</div>
+
+        <h1>SPIDER SMART HOME</h1>
+
+        <p>With great power comes great control.</p>
+
     </header>
+
+
+    <!-- Dashboard -->
 
     <main>
 
+        <h2 class="dashboard-title">
+            🕸️ HOME CONTROL DASHBOARD
+        </h2>
+
         <div class="dashboard">
 
-            <!-- Light -->
-            <div class="device-card">
-                <div class="icon">💡</div>
-                <h2>Light</h2>
 
-                <p>Status:
-                    <span id="lightStatus" class="off">OFF</span>
+            <!-- LIGHT -->
+
+            <div class="device-card">
+
+                <div class="device-icon">💡</div>
+
+                <h2>LIGHT</h2>
+
+                <p>
+                    Status:
+                    <span id="lightStatus" class="off">
+                        OFF
+                    </span>
                 </p>
 
-                <button onclick="toggleDevice('light')">
-                    Turn ON
+                <button
+                    id="lightButton"
+                    onclick="toggleDevice('light')">
+
+                    TURN ON
+
                 </button>
+
             </div>
 
 
-            <!-- Fan -->
-            <div class="device-card">
-                <div class="icon">🌀</div>
-                <h2>Fan</h2>
+            <!-- FAN -->
 
-                <p>Status:
-                    <span id="fanStatus" class="off">OFF</span>
+            <div class="device-card">
+
+                <div class="device-icon">🌀</div>
+
+                <h2>FAN</h2>
+
+                <p>
+                    Status:
+                    <span id="fanStatus" class="off">
+                        OFF
+                    </span>
                 </p>
 
-                <button onclick="toggleDevice('fan')">
-                    Turn ON
+                <button
+                    id="fanButton"
+                    onclick="toggleDevice('fan')">
+
+                    TURN ON
+
                 </button>
+
             </div>
 
 
             <!-- TV -->
+
             <div class="device-card">
-                <div class="icon">📺</div>
+
+                <div class="device-icon">📺</div>
+
                 <h2>TV</h2>
 
-                <p>Status:
-                    <span id="tvStatus" class="off">OFF</span>
+                <p>
+                    Status:
+                    <span id="tvStatus" class="off">
+                        OFF
+                    </span>
                 </p>
 
-                <button onclick="toggleDevice('tv')">
-                    Turn ON
+                <button
+                    id="tvButton"
+                    onclick="toggleDevice('tv')">
+
+                    TURN ON
+
                 </button>
+
             </div>
 
 
             <!-- AC -->
+
             <div class="device-card">
-                <div class="icon">❄️</div>
+
+                <div class="device-icon">❄️</div>
+
                 <h2>AC</h2>
 
-                <p>Status:
-                    <span id="acStatus" class="off">OFF</span>
+                <p>
+                    Status:
+                    <span id="acStatus" class="off">
+                        OFF
+                    </span>
                 </p>
 
-                <button onclick="toggleDevice('ac')">
-                    Turn ON
+                <button
+                    id="acButton"
+                    onclick="toggleDevice('ac')">
+
+                    TURN ON
+
                 </button>
+
             </div>
+
 
         </div>
 
     </main>
 
+
+    <!-- Footer -->
+
     <footer>
-        <p>© 2026 Smart Home Control</p>
+
+        <div class="footer-spider">
+            🕷️
+        </div>
+
+        <p>
+            SPIDER SMART HOME © 2026
+        </p>
+
+        <p>
+            Your Home. Your Control.
+        </p>
+
     </footer>
+
 
     <script src="script.js"></script>
 
