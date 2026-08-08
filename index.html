@@ -3,114 +3,190 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spider-Man: Web Network</title>
+  <title>Spidey-Home Control Hub</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Web Canvas for Interactive Web Shooting -->
+  <!-- Web-Shooter Interactive Background Canvas -->
   <canvas id="webCanvas"></canvas>
 
-  <!-- Navbar -->
+  <!-- Navigation Bar -->
   <nav class="spidey-nav">
     <div class="logo">
-      <svg class="icon-spider-logo" viewBox="0 0 100 100">
+      <svg class="spidey-icon" viewBox="0 0 100 100">
         <path d="M50 15 L35 35 L15 30 L30 50 L10 70 L35 65 L20 90 L45 75 L50 95 L55 75 L80 90 L65 65 L90 70 L70 50 L85 30 L65 35 Z" fill="#E62429" stroke="#FFF" stroke-width="2"/>
         <circle cx="50" cy="45" r="8" fill="#FFF"/>
       </svg>
-      <span>SPIDEY-NET</span>
+      <span>SPIDEY-HOME HUB</span>
     </div>
-    <ul class="nav-links">
-      <li><a href="#hero" class="active">Suit Hub</a></li>
-      <li><a href="#gadgets">Gadgets</a></li>
-      <li><a href="#stats">Spider-Sense</a></li>
-    </ul>
-    <button class="cta-web-btn" id="shootWebBtn">
+    
+    <div class="nav-stats">
+      <div class="stat-badge"><span class="dot green"></span> Grid: Active</div>
+      <div class="stat-badge"><span class="dot yellow"></span> Spider-Sense: Arming</div>
+    </div>
+
+    <button class="cta-web-btn" id="panicBtn">
       <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 2L15 8L21 9L17 14 L18 20L12 17L6 20L7 14L3 9L9 8Z"/>
       </svg>
-      SHOOT WEB
+      LOCKDOWN WEB
     </button>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero-section">
-    <div class="hero-content">
-      <div class="badge">FRIENDLY NEIGHBORHOOD PROTOCOL</div>
-      <h1>YOUR NETWORK, <br><span class="highlight-blue">SUPERCHARGED.</span></h1>
-      <p>Navigate the city with high-tech suit diagnostics, real-time web-shooter telemetry, and instant Spider-Sense alert feeds.</p>
-      
-      <div class="hero-buttons">
-        <a href="#gadgets" class="btn-primary">EXPLORE TECH</a>
-        <button class="btn-secondary" id="activateSenseBtn">ACTIVATE SPIDER-SENSE</button>
+  <!-- Dashboard Overview -->
+  <main class="dashboard-container">
+    <header class="hero-header">
+      <div class="header-text">
+        <div class="badge">SMART APPLIANCE TELEMETRY</div>
+        <h1>NEIGHBORHOOD <span class="highlight-blue">CONTROL CENTER</span></h1>
+        <p>Manage, monitor, and secure household appliances via Stark-Tech web protocols.</p>
       </div>
-    </div>
 
-    <!-- Interactive Hero Card -->
-    <div class="hero-card-container">
-      <div class="hero-card">
-        <div class="card-badge">MARK IV SUIT</div>
-        <div class="spider-mask-art">
-          <svg viewBox="0 0 100 120" class="mask-svg">
-            <path d="M50 5 C20 5 5 35 5 70 C5 95 30 115 50 115 C70 115 95 95 95 70 C95 35 80 5 50 5 Z" fill="#E62429" stroke="#111" stroke-width="4"/>
-            <!-- Web Lines on Mask -->
-            <path d="M50 5 L50 115 M5 70 L95 70 M15 35 L85 95 M15 95 L85 35" stroke="rgba(0,0,0,0.4)" stroke-width="2"/>
-            <!-- Eyes -->
-            <path d="M20 45 Q 40 40 45 60 Q 30 75 15 60 Z" fill="#FFF" stroke="#111" stroke-width="4"/>
-            <path d="M80 45 Q 60 40 55 60 Q 70 75 85 60 Z" fill="#FFF" stroke="#111" stroke-width="4"/>
-          </svg>
+      <div class="master-control-box">
+        <h3>SYSTEM POWER</h3>
+        <button class="master-toggle" id="masterToggleBtn">ALL APPLIANCES ON</button>
+      </div>
+    </header>
+
+    <!-- Appliance Grid -->
+    <section class="grid-container">
+
+      <!-- Appliance 1: Web Climate (AC) -->
+      <div class="appliance-card active" data-id="ac">
+        <div class="card-header">
+          <div class="card-icon blue-glow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M2 12h20M5 5l14 14M5 19L19 5" stroke="#00D2FF"/>
+            </svg>
+          </div>
+          <label class="switch">
+            <input type="checkbox" checked class="appliance-toggle">
+            <span class="slider"></span>
+          </label>
         </div>
-        <h3>STEALTH & ARMOR</h3>
-        <p>Liquid metal nano-technology with web-fluid overdrive.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Spidey Gadgets Section -->
-  <section id="gadgets" class="gadgets-section">
-    <h2 class="section-title">SPIDEY <span>EQUIPMENT</span></h2>
-    
-    <div class="grid-container">
-      
-      <!-- Card 1 -->
-      <div class="gadget-card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="9" stroke="#E62429"/>
-            <path d="M12 3v18M3 12h18M6 6l12 12M6 18L18 6" stroke="#00D2FF"/>
-          </svg>
+        <h3>Web-Frost AC</h3>
+        <p class="location">Living Room</p>
+        <div class="card-metrics">
+          <span class="temp-val">21°C</span>
+          <span class="status-pill active-pill">COOLING</span>
         </div>
-        <h3>Web-Shooter 3.0</h3>
-        <p>Micro-fluid compression tanks with up to 20 custom web-combination matrices.</p>
       </div>
 
-      <!-- Card 2 -->
-      <div class="gadget-card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#FFD700" fill="#FFD700"/>
-          </svg>
+      <!-- Appliance 2: Spider-Sense Security -->
+      <div class="appliance-card active" data-id="security">
+        <div class="card-header">
+          <div class="card-icon red-glow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#E62429"/>
+            </svg>
+          </div>
+          <label class="switch">
+            <input type="checkbox" checked class="appliance-toggle">
+            <span class="slider"></span>
+          </label>
         </div>
-        <h3>Spider-Sense HUD</h3>
-        <p>Omnidirectional early warning alert system integrated into lens display optics.</p>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="gadget-card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polygon points="12 2 2 7 12 12 22 7 12 2" stroke="#E62429"/>
-            <polyline points="2 17 12 22 22 17" stroke="#00D2FF"/>
-            <polyline points="2 12 12 17 22 12" stroke="#E62429"/>
-          </svg>
+        <h3>Spider-Sense Security</h3>
+        <p class="location">Perimeter & Motion</p>
+        <div class="card-metrics">
+          <span class="status-val text-gold">ARMED</span>
+          <span class="status-pill active-pill">MONITORING</span>
         </div>
-        <h3>Recon Drones</h3>
-        <p>Autonomous spider-drones capable of stealth mapping and acoustic tracking.</p>
       </div>
 
-    </div>
-  </section>
+      <!-- Appliance 3: Electro Lights -->
+      <div class="appliance-card active" data-id="lights">
+        <div class="card-header">
+          <div class="card-icon yellow-glow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 21h6M12 3a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z" stroke="#FFD700"/>
+            </svg>
+          </div>
+          <label class="switch">
+            <input type="checkbox" checked class="appliance-toggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <h3>Electro Ambient Lights</h3>
+        <p class="location">Main Suite</p>
+        <div class="card-metrics">
+          <span class="status-val">85% Brightness</span>
+          <span class="status-pill active-pill">ACTIVE</span>
+        </div>
+      </div>
+
+      <!-- Appliance 4: Cryo Refrigerator -->
+      <div class="appliance-card active" data-id="fridge">
+        <div class="card-header">
+          <div class="card-icon blue-glow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="5" y="2" width="14" height="20" rx="2" stroke="#00D2FF"/>
+              <line x1="5" y1="10" x2="19" y2="10" stroke="#00D2FF"/>
+              <line x1="9" y1="6" x2="9" y2="8" stroke="#00D2FF"/>
+              <line x1="9" y1="14" x2="9" y2="17" stroke="#00D2FF"/>
+            </svg>
+          </div>
+          <label class="switch">
+            <input type="checkbox" checked class="appliance-toggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <h3>Cryo-Vault Fridge</h3>
+        <p class="location">Kitchen</p>
+        <div class="card-metrics">
+          <span class="temp-val">3°C / -18°C</span>
+          <span class="status-pill active-pill">OPTIMAL</span>
+        </div>
+      </div>
+
+      <!-- Appliance 5: Web Lock -->
+      <div class="appliance-card active" data-id="lock">
+        <div class="card-header">
+          <div class="card-icon red-glow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" stroke="#E62429"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#E62429"/>
+            </svg>
+          </div>
+          <label class="switch">
+            <input type="checkbox" checked class="appliance-toggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <h3>Web-Latch Door</h3>
+        <p class="location">Front Entry</p>
+        <div class="card-metrics">
+          <span class="status-val text-red">LOCKED</span>
+          <span class="status-pill active-pill">SECURE</span>
+        </div>
+      </div>
+
+      <!-- Appliance 6: Sonic Washer -->
+      <div class="appliance-card" data-id="washer">
+        <div class="card-header">
+          <div class="card-icon blue-glow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="4" y="2" width="16" height="20" rx="2" stroke="#00D2FF"/>
+              <circle cx="12" cy="13" r="5" stroke="#00D2FF"/>
+              <circle cx="8" cy="6" r="1" fill="#00D2FF"/>
+            </svg>
+          </div>
+          <label class="switch">
+            <input type="checkbox" class="appliance-toggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <h3>Sonic Web Washer</h3>
+        <p class="location">Laundry Room</p>
+        <div class="card-metrics">
+          <span class="status-val text-muted">IDLE</span>
+          <span class="status-pill">OFFLINE</span>
+        </div>
+      </div>
+
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
