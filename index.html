@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Spider Smart Home</title>
 
@@ -11,143 +14,531 @@
 
 <body>
 
-    <!-- Background Web -->
-    <div class="web web1"></div>
-    <div class="web web2"></div>
+    <!-- Animated Web Background -->
 
-    <!-- Header -->
-    <header>
+    <div class="web-background">
+        <div class="web web-one"></div>
+        <div class="web web-two"></div>
+        <div class="web web-three"></div>
+    </div>
 
-        <div class="spider">🕷️</div>
 
-        <h1>SPIDER SMART HOME</h1>
+    <!-- Floating Particles -->
 
-        <p>With great power comes great control.</p>
+    <div class="particles">
+        <span>✦</span>
+        <span>✧</span>
+        <span>✦</span>
+        <span>✧</span>
+        <span>✦</span>
+        <span>✧</span>
+        <span>✦</span>
+    </div>
+
+
+    <!-- HEADER -->
+
+    <header class="hero">
+
+        <div class="spider-symbol">
+            🕷️
+        </div>
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                🕸️ WELCOME TO YOUR
+            </p>
+
+            <h1>
+                SPIDER
+                <span>SMART HOME</span>
+            </h1>
+
+            <p class="tagline">
+                With great power comes great control.
+            </p>
+
+        </div>
+
+        <div class="clock" id="clock">
+            00:00:00
+        </div>
 
     </header>
 
 
-    <!-- Dashboard -->
+    <!-- NAVIGATION -->
 
-    <main>
+    <nav>
 
-        <h2 class="dashboard-title">
-            🕸️ HOME CONTROL DASHBOARD
-        </h2>
+        <a href="#home">HOME</a>
 
-        <div class="dashboard">
+        <a href="#devices">DEVICES</a>
+
+        <a href="#security">SECURITY</a>
+
+        <a href="#about">ABOUT</a>
+
+    </nav>
 
 
-            <!-- LIGHT -->
+    <!-- MAIN -->
 
-            <div class="device-card">
+    <main id="home">
 
-                <div class="device-icon">💡</div>
 
-                <h2>LIGHT</h2>
+        <!-- Welcome Section -->
 
-                <p>
-                    Status:
-                    <span id="lightStatus" class="off">
-                        OFF
-                    </span>
+        <section class="welcome">
+
+            <div>
+
+                <p class="section-label">
+                    🕷️ SPIDER COMMAND CENTER
                 </p>
 
-                <button
-                    id="lightButton"
-                    onclick="toggleDevice('light')">
+                <h2>
+                    CONTROL YOUR
+                    <span>HOME</span>
+                </h2>
 
-                    TURN ON
+                <p>
+                    Manage your smart appliances from
+                    one powerful dashboard.
+                </p>
 
-                </button>
+            </div>
+
+            <div class="power-circle">
+
+                <div class="power-icon">
+                    ⚡
+                </div>
+
+                <p>
+                    SYSTEM
+                </p>
+
+                <strong>
+                    ONLINE
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- DEVICES -->
+
+        <section id="devices">
+
+            <div class="section-heading">
+
+                <span>🕸️</span>
+
+                <h2>
+                    SMART DEVICES
+                </h2>
+
+                <span>🕸️</span>
 
             </div>
 
 
-            <!-- FAN -->
+            <div class="device-grid">
 
-            <div class="device-card">
 
-                <div class="device-icon">🌀</div>
+                <!-- LIGHT -->
 
-                <h2>FAN</h2>
+                <div class="device-card"
+                     id="lightCard">
 
-                <p>
-                    Status:
-                    <span id="fanStatus" class="off">
-                        OFF
-                    </span>
-                </p>
+                    <div class="card-top">
 
-                <button
-                    id="fanButton"
-                    onclick="toggleDevice('fan')">
+                        <span class="device-number">
+                            01
+                        </span>
 
-                    TURN ON
+                        <span class="web-icon">
+                            🕸️
+                        </span>
 
-                </button>
+                    </div>
+
+                    <div class="device-icon light-icon">
+                        💡
+                    </div>
+
+                    <h3>
+                        SMART LIGHT
+                    </h3>
+
+                    <p class="device-description">
+                        Living Room
+                    </p>
+
+                    <div class="status">
+
+                        <span>
+                            STATUS
+                        </span>
+
+                        <strong id="lightStatus"
+                                class="off">
+                            OFF
+                        </strong>
+
+                    </div>
+
+                    <button
+                        id="lightButton"
+                        onclick="toggleDevice('light')">
+
+                        <span>⚡</span>
+                        TURN ON
+
+                    </button>
+
+                </div>
+
+
+                <!-- FAN -->
+
+                <div class="device-card"
+                     id="fanCard">
+
+                    <div class="card-top">
+
+                        <span class="device-number">
+                            02
+                        </span>
+
+                        <span class="web-icon">
+                            🕸️
+                        </span>
+
+                    </div>
+
+                    <div class="device-icon fan-icon">
+                        🌀
+                    </div>
+
+                    <h3>
+                        SMART FAN
+                    </h3>
+
+                    <p class="device-description">
+                        Bedroom
+                    </p>
+
+                    <div class="status">
+
+                        <span>
+                            STATUS
+                        </span>
+
+                        <strong id="fanStatus"
+                                class="off">
+                            OFF
+                        </strong>
+
+                    </div>
+
+                    <button
+                        id="fanButton"
+                        onclick="toggleDevice('fan')">
+
+                        <span>⚡</span>
+                        TURN ON
+
+                    </button>
+
+                </div>
+
+
+                <!-- TV -->
+
+                <div class="device-card"
+                     id="tvCard">
+
+                    <div class="card-top">
+
+                        <span class="device-number">
+                            03
+                        </span>
+
+                        <span class="web-icon">
+                            🕸️
+                        </span>
+
+                    </div>
+
+                    <div class="device-icon tv-icon">
+                        📺
+                    </div>
+
+                    <h3>
+                        SMART TV
+                    </h3>
+
+                    <p class="device-description">
+                        Entertainment Room
+                    </p>
+
+                    <div class="status">
+
+                        <span>
+                            STATUS
+                        </span>
+
+                        <strong id="tvStatus"
+                                class="off">
+                            OFF
+                        </strong>
+
+                    </div>
+
+                    <button
+                        id="tvButton"
+                        onclick="toggleDevice('tv')">
+
+                        <span>⚡</span>
+                        TURN ON
+
+                    </button>
+
+                </div>
+
+
+                <!-- AC -->
+
+                <div class="device-card"
+                     id="acCard">
+
+                    <div class="card-top">
+
+                        <span class="device-number">
+                            04
+                        </span>
+
+                        <span class="web-icon">
+                            🕸️
+                        </span>
+
+                    </div>
+
+                    <div class="device-icon ac-icon">
+                        ❄️
+                    </div>
+
+                    <h3>
+                        SMART AC
+                    </h3>
+
+                    <p class="device-description">
+                        Master Bedroom
+                    </p>
+
+                    <div class="status">
+
+                        <span>
+                            STATUS
+                        </span>
+
+                        <strong id="acStatus"
+                                class="off">
+                            OFF
+                        </strong>
+
+                    </div>
+
+                    <button
+                        id="acButton"
+                        onclick="toggleDevice('ac')">
+
+                        <span>⚡</span>
+                        TURN ON
+
+                    </button>
+
+                </div>
+
+
+                <!-- DOOR -->
+
+                <div class="device-card"
+                     id="doorCard">
+
+                    <div class="card-top">
+
+                        <span class="device-number">
+                            05
+                        </span>
+
+                        <span class="web-icon">
+                            🕸️
+                        </span>
+
+                    </div>
+
+                    <div class="device-icon door-icon">
+                        🔐
+                    </div>
+
+                    <h3>
+                        SMART LOCK
+                    </h3>
+
+                    <p class="device-description">
+                        Main Entrance
+                    </p>
+
+                    <div class="status">
+
+                        <span>
+                            STATUS
+                        </span>
+
+                        <strong id="doorStatus"
+                                class="off">
+                            LOCKED
+                        </strong>
+
+                    </div>
+
+                    <button
+                        id="doorButton"
+                        onclick="toggleDoor()">
+
+                        <span>🔓</span>
+                        UNLOCK
+
+                    </button>
+
+                </div>
+
+
+                <!-- CAMERA -->
+
+                <div class="device-card"
+                     id="cameraCard">
+
+                    <div class="card-top">
+
+                        <span class="device-number">
+                            06
+                        </span>
+
+                        <span class="web-icon">
+                            🕸️
+                        </span>
+
+                    </div>
+
+                    <div class="device-icon camera-icon">
+                        📹
+                    </div>
+
+                    <h3>
+                        SECURITY CAM
+                    </h3>
+
+                    <p class="device-description">
+                        Main Entrance
+                    </p>
+
+                    <div class="status">
+
+                        <span>
+                            STATUS
+                        </span>
+
+                        <strong id="cameraStatus"
+                                class="off">
+                            OFF
+                        </strong>
+
+                    </div>
+
+                    <button
+                        id="cameraButton"
+                        onclick="toggleDevice('camera')">
+
+                        <span>📹</span>
+                        START
+
+                    </button>
+
+                </div>
 
             </div>
 
+        </section>
 
-            <!-- TV -->
 
-            <div class="device-card">
+        <!-- SECURITY -->
 
-                <div class="device-icon">📺</div>
+        <section id="security"
+                 class="security-section">
 
-                <h2>TV</h2>
+            <div class="security-icon">
+                🛡️
+            </div>
 
-                <p>
-                    Status:
-                    <span id="tvStatus" class="off">
-                        OFF
-                    </span>
+            <div>
+
+                <p class="section-label">
+                    SPIDER SECURITY SYSTEM
                 </p>
 
-                <button
-                    id="tvButton"
-                    onclick="toggleDevice('tv')">
+                <h2>
+                    YOUR HOME IS
+                    <span>PROTECTED</span>
+                </h2>
 
-                    TURN ON
-
-                </button>
+                <p>
+                    Smart monitoring and device control
+                    from one place.
+                </p>
 
             </div>
 
+            <div class="security-status">
 
-            <!-- AC -->
+                <div class="green-dot"></div>
 
-            <div class="device-card">
-
-                <div class="device-icon">❄️</div>
-
-                <h2>AC</h2>
-
-                <p>
-                    Status:
-                    <span id="acStatus" class="off">
-                        OFF
-                    </span>
-                </p>
-
-                <button
-                    id="acButton"
-                    onclick="toggleDevice('ac')">
-
-                    TURN ON
-
-                </button>
+                <strong>
+                    SECURE
+                </strong>
 
             </div>
 
+        </section>
 
-        </div>
+
+        <!-- ABOUT -->
+
+        <section id="about"
+                 class="about-section">
+
+            <h2>
+                🕷️ SPIDER SMART HOME
+            </h2>
+
+            <p>
+                A colorful smart home control dashboard
+                designed to manage your appliances
+                quickly and easily.
+            </p>
+
+        </section>
+
 
     </main>
 
 
-    <!-- Footer -->
+    <!-- FOOTER -->
 
     <footer>
 
@@ -155,12 +546,16 @@
             🕷️
         </div>
 
-        <p>
-            SPIDER SMART HOME © 2026
-        </p>
+        <h2>
+            SPIDER SMART HOME
+        </h2>
 
         <p>
-            Your Home. Your Control.
+            Your Home • Your Power • Your Control
+        </p>
+
+        <p class="copyright">
+            © 2026 Spider Smart Home
         </p>
 
     </footer>
@@ -169,4 +564,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
